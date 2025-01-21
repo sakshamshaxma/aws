@@ -64,4 +64,3 @@ terraform output
 ```
 terraform destroy
 ```
-#Please Note: We can store secrets in Terraform Vault, such as username, password, access key, secret key, etc.
