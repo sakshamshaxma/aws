@@ -49,10 +49,19 @@
 ```
 terraform init
 ```
-5. terraform validate
-6. terraform plan
-7. terraform apply
-8. terraform output
-9. terraform destroy
-
+```
+terraform validate
+```
+```
+terraform plan
+```
+```
+terraform apply
+```
+```
+terraform output
+```
+```
+terraform destroy
+```
 #Please Note: We can store secrets in Terraform Vault, such as username, password, access key, secret key, etc.
