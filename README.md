@@ -1,49 +1,55 @@
-##project breakdown
-1. VPC Module #vpc subnet internet gateway security groups
+## Project Breakdown
 
-2. EKS Module #eks cluster with 3 nodes.
+### VPC Module
+- VPC
+- Subnet
+- Internet Gateway
+- Security Groups
 
-3. RDS Module #rds cluster using mysql
+### EKS Module
+- EKS Cluster with 3 Nodes
 
-4. Elasticache Module # memcache for php wordpress
+### RDS Module
+- RDS Cluster using MySQL
 
-##project run steps
+### Elasticache Module
+- Memcache for PHP WordPress
 
-git clone https://github.com/sakshamshaxma/fathershop
-cd fathershop
-terraform workspace list # show project list
-fathershop/
+## Project Run Steps
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/sakshamshaxma/fathershop
+   cd fathershop
+   ```
+2. terraform workspace list
+   fathershop/
 ├── main.tf
 ├── variables.tf
 ├── outputs.tf
 ├── modules/
-├── vpc/
-│ ├── main.tf
-│ ├── variables.tf
-│ ├── outputs.tf
-├── eks/
-│ ├── main.tf
-│ ├── variables.tf
-│ ├── outputs.tf
-├── rds/
-│ ├── main.tf
-│ ├── variables.tf
-│ ├── outputs.tf
-├── elasticache/
-│ ├── main.tf
-│ ├── variables.tf
-│ ├── outputs.tf
+│   ├── vpc/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   ├── outputs.tf
+│   ├── eks/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   ├── outputs.tf
+│   ├── rds/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   ├── outputs.tf
+│   ├── elasticache/
+│       ├── main.tf
+│       ├── variables.tf
+│       ├── outputs.tf
 
-terraform init #initialize configurations and download plugins and dependency
+3. terraform init
+4. terraform validate
+5. terraform plan
+6. terraform apply
+7. terraform output
+8. terraform destroy
 
-terraform validate #validate terraform syntax and error free
-
-terraform plan #show details preview about configuration
-
-terraform apply #create infrastructure
-
-terraform output #show output from state file
-
-terraform destroy #remove infrastrucure
-
-please note: we can store secrets in terraform vault like username password access key secret key etc.
+#Please Note: We can store secrets in Terraform Vault, such as username, password, access key, secret key, etc.
