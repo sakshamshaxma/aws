@@ -1,6 +1,6 @@
 ## Project Breakdown
 
-### VPC Module
+### VPC Module modules/vpc
 - VPC
 - Subnet
 - Internet Gateway
