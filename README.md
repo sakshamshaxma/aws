@@ -46,7 +46,9 @@
 │       ├── variables.tf
 │       ├── outputs.tf
 ```
-4. terraform init
+```
+terraform init
+```
 5. terraform validate
 6. terraform plan
 7. terraform apply
