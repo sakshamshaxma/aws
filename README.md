@@ -23,6 +23,7 @@
    cd fathershop
    ```
 2. terraform workspace list
+```
    fathershop/
 ├── main.tf
 ├── variables.tf
@@ -44,12 +45,12 @@
 │       ├── main.tf
 │       ├── variables.tf
 │       ├── outputs.tf
-
-3. terraform init
-4. terraform validate
-5. terraform plan
-6. terraform apply
-7. terraform output
-8. terraform destroy
+```
+4. terraform init
+5. terraform validate
+6. terraform plan
+7. terraform apply
+8. terraform output
+9. terraform destroy
 
 #Please Note: We can store secrets in Terraform Vault, such as username, password, access key, secret key, etc.
