@@ -1,14 +1,20 @@
-# RDS main.tf
-resource "aws_db_instance" "fathershop" {
-  allocated_storage = 20
-  engine            = "mysql"
-  engine_version    = "8.0"
-  instance_class    = "t2.micro"
-  name              = var.db_name
-  username          = var.db_username
-  password          = var.db_password
+resource "aws_db_subnet_group" "rds" {
+  name       = "rds-subnet-group"
+  subnet_ids = var.public_subnet_ids
+  tags       = var.tags
+}
+
+resource "aws_db_instance" "rds" {
+  allocated_storage    = 20
+  engine               = "mysql"
+  engine_version       = "8.0"
+  instance_class       = "db.t2.micro"
+  identifier           = "mydb"
+  username             = "admin"
+  password             = "password123"
   parameter_group_name = "default.mysql8.0"
+  publicly_accessible  = true
+  db_subnet_group_name = aws_db_subnet_group.rds.name
   skip_final_snapshot  = true
-  vpc_security_group_ids = [var.security_group_id]
-  db_subnet_group_name   = var.db_subnet_group_name
+  tags                 = var.tags
 }

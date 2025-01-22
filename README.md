@@ -13,39 +13,37 @@
 - RDS Cluster using MySQL
 
 ### Elasticache Module
-- Memcache for PHP fathershop
+- Redis for PHP fathershop
 
 ## Project Run Steps
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/sakshamshaxma/fathershop
    cd fathershop
    ```
+
 2. terraform workspace list
 ```
    fathershop/
 ├── main.tf
-├── variables.tf
-├── outputs.tf
 ├── modules/
 │   ├── vpc/
 │   │   ├── main.tf
-│   │   ├── variables.tf
-│   │   ├── outputs.tf
+│   │   └── variables.tf
 │   ├── eks/
 │   │   ├── main.tf
-│   │   ├── variables.tf
-│   │   ├── outputs.tf
+│   │   └── variables.tf
 │   ├── rds/
 │   │   ├── main.tf
-│   │   ├── variables.tf
-│   │   ├── outputs.tf
-│   ├── elasticache/
+│   │   └── variables.tf
+│   └── elasticache/
 │       ├── main.tf
-│       ├── variables.tf
-│       ├── outputs.tf
+│       └── variables.tf
+
 ```
+
 ```
 terraform init
 ```
@@ -57,9 +55,6 @@ terraform plan
 ```
 ```
 terraform apply
-```
-```
-terraform output
 ```
 ```
 terraform destroy

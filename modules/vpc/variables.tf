@@ -1,15 +1,9 @@
-# VPC variables.tf
-variable "region" {
-  description = "The AWS region to deploy the VPC in"
-  type        = string
-}
-
 variable "vpc_cidr" {
-  description = "The CIDR block for the VPC"
   type        = string
+  description = "The CIDR block for the VPC."
 }
 
-variable "public_subnet_cidrs" {
-  description = "A list of CIDR blocks for public subnets"
-  type        = list(string)
+variable "tags" {
+  type        = map(string)
+  description = "Tags for the resources."
 }

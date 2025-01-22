@@ -1,11 +1,15 @@
-# Elasticache main.tf
-resource "aws_elasticache_cluster" "memcached" {
-  cluster_id           = var.cluster_id
-  engine               = "memcached"
+resource "aws_elasticache_subnet_group" "cache" {
+  name       = "cache-subnet-group"
+  subnet_ids = var.public_subnet_ids
+  tags       = var.tags
+}
+
+resource "aws_elasticache_cluster" "cache" {
+  cluster_id           = "cache-cluster"
+  engine               = "valkey"
   node_type            = "cache.t2.micro"
   num_cache_nodes      = 1
-  parameter_group_name = "default.memcached1.4"
-  port                 = 11211
-  subnet_group_name    = var.subnet_group_name
-  security_group_ids   = [var.security_group_id]
+  parameter_group_name = "default.valkey3.2"
+  subnet_group_name    = aws_elasticache_subnet_group.cache.name
+  tags                 = var.tags
 }

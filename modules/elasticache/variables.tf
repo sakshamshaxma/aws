@@ -1,15 +1,9 @@
-# Elasticache variables.tf
-variable "cluster_id" {
-  description = "The ID of the Elasticache cluster"
-  type        = string
+variable "public_subnet_ids" {
+  type        = list(string)
+  description = "The IDs of the public subnets."
 }
 
-variable "subnet_group_name" {
-  description = "The name of the subnet group"
-  type        = string
-}
-
-variable "security_group_id" {
-  description = "The security group ID for the Elasticache cluster"
-  type        = string
+variable "tags" {
+  type        = map(string)
+  description = "Tags for the resources."
 }

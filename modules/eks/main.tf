@@ -1,29 +1,16 @@
-# EKS main.tf
-module "vpc" {
-  source = "../vpc"
-  region = var.region
-  vpc_cidr = var.vpc_cidr
-  public_subnet_cidrs = var.public_subnet_cidrs
-}
+module "eks" {
+  source          = "terraform-aws-modules/eks/aws"
+  cluster_name    = var.cluster_name
+  cluster_version = "1.31"
+  vpc_id          = var.vpc_id
+  subnet_ids      = var.subnet_ids
 
-resource "aws_eks_cluster" "main" {
-  name = var.cluster_name
-  role_arn = var.cluster_role_arn
-
-  vpc_config {
-    subnet_ids = module.vpc.public_subnet_ids
-  }
-}
-
-resource "aws_eks_node_group" "main" {
-  cluster_name    = aws_eks_cluster.main.name
-  node_group_name = var.node_group_name
-  node_role_arn   = var.node_role_arn
-  subnet_ids      = module.vpc.public_subnet_ids
-
-  scaling_config {
-    desired_size = var.desired_capacity
-    max_size     = var.max_capacity
-    min_size     = var.min_capacity
+  eks_managed_node_groups = {
+    eks_nodes = {
+      desired_capacity = 2
+      max_capacity     = 3
+      min_capacity     = 1
+      instance_types   = ["t2.micro"]
+    }
   }
 }
