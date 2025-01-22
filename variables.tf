@@ -2,7 +2,7 @@
 variable "region" {
   description = "The AWS region"
   type        = string
-  default     = "ap-south-1"
+  default     = "us-east-1"
 }
 
 variable "vpc_cidr" {
@@ -20,7 +20,7 @@ variable "public_subnet_cidrs" {
 variable "cluster_name" {
   description = "The name of the EKS cluster"
   type        = string
-  default     = "wordpress-cluster"
+  default     = "fathershop-cluster"
 }
 
 variable "cluster_role_arn" {
@@ -31,7 +31,7 @@ variable "cluster_role_arn" {
 variable "node_group_name" {
   description = "The name of the EKS node group"
   type        = string
-  default     = "wordpress-node-group"
+  default     = "fathershop-node-group"
 }
 
 variable "node_role_arn" {
@@ -60,7 +60,7 @@ variable "min_capacity" {
 variable "db_name" {
   description = "The name of the database"
   type        = string
-  default     = "wordpress"
+  default     = "fathershop"
 }
 
 variable "db_username" {
@@ -72,11 +72,11 @@ variable "db_username" {
 variable "db_password" {
   description = "The password for the database"
   type        = string
-  default     = "password"
+  default     = "f@thersh0p"
 }
 
 variable "elasticache_cluster_id" {
   description = "The ID of the Elasticache cluster"
   type        = string
-  default     = "wordpress-memcached"
+  default     = "fathershop-memcached"
 }

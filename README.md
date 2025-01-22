@@ -13,7 +13,7 @@
 - RDS Cluster using MySQL
 
 ### Elasticache Module
-- Memcache for PHP WordPress
+- Memcache for PHP fathershop
 
 ## Project Run Steps
 
