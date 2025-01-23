@@ -8,14 +8,14 @@ module "vpc" {
 
   vpc_cidr = "10.0.0.0/16"
   tags = {
-    Name = "main-vpc"
+    Name = "saksham-vpc"
   }
 }
 
 # Call EKS Module
 module "eks" {
   source       = "./modules/eks"
-  cluster_name = "example-cluster"
+  cluster_name = "saksham-cluster"
   vpc_id       = module.vpc.vpc_id
   subnet_ids   = module.vpc.public_subnet_ids
 }
