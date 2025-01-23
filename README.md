@@ -1,18 +1,22 @@
-## Project Breakdown
+# Project Breakdown
 
-### VPC Module
+## VPC Module
+
 - VPC
 - Subnet
 - Internet Gateway
 - Security Groups
 
-### EKS Module
+## EKS Module
+
 - EKS Cluster with 3 Nodes
 
-### RDS Module
+## RDS Module
+
 - RDS Cluster using MySQL
 
-### Elasticache Module
+## Elasticache Module
+
 - Redis for PHP fathershop
 
 ## Project Run Steps
@@ -25,9 +29,16 @@
    ```
 
 2. terraform workspace list
+
+```bash
+terraform workspace list
 ```
-   fathershop/
+
+```plaintext
+fathershop/
 ├── main.tf
+├── variables.tf
+├── terraform.tfvars
 ├── modules/
 │   ├── vpc/
 │   │   ├── main.tf
@@ -41,21 +52,15 @@
 │   └── elasticache/
 │       ├── main.tf
 │       └── variables.tf
-
 ```
 
-```
+```bash
 terraform init
-```
-```
+terraform fmt
 terraform validate
-```
-```
+terraform plan -var-file=terraform.tfvars
 terraform plan
-```
-```
 terraform apply
-```
-```
 terraform destroy
 ```
+
