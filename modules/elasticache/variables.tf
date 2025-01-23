@@ -1,6 +1,6 @@
-variable "public_subnet_ids" {
+variable "private_subnet_ids" {
   type        = list(string)
-  description = "The IDs of the public subnets."
+  description = "The IDs of the private subnets."
 }
 
 variable "tags" {
