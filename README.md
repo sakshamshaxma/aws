@@ -17,7 +17,7 @@
 
 ## Elasticache Module
 
-- Redis for PHP fathershop
+- Redis
 
 ## Project Run Steps
 
