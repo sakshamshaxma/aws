@@ -25,7 +25,7 @@
 
    ```bash
    git clone https://github.com/sakshamshaxma/fathershop
-   cd fathershop
+   cd aws
    ```
 
 2. terraform workspace list
